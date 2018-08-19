@@ -19,10 +19,21 @@ You'll require the latest stable version of node and npm installed on your machi
 Once installed, run the following commands:
 
 ### Installing
+
+1. Cloning the repo:
 ```
 git clone https://github.com/avinashiyer4292/NYTimesBooks-React.git
 cd NYTimesBooks-React
 npm install
 npm start
 ```
+
+2. Download zip file:
+Once downloaded ,
+```
+cd NYTimesBooks-React-master
+npm install
+npm start
+```
+
 Once done, go to http://localhost:3000/ on your browser to view the app
