@@ -3,10 +3,10 @@ import React from 'react';
 const Header =() => {
 
     const headerStyle={
-        backgroundColor: 'rgb(77,86,103)',
+        backgroundColor: 'rgb(83, 140, 39)',
         width: '100%',
         height: '50px',
-        color: 'rgb(247,247,247, 0.5)'
+        color: 'rgb(247,247,247)'
     };
 
     const spanStyle={

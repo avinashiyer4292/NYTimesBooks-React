@@ -36,8 +36,8 @@ li{
   font-size: 15px;
 }
 
-li:hover{
-  background-color: rgb(77,86,103);
+li:not(.seller-link):hover{
+  background-color: rgb(83, 140, 39);
   color: #fff;
   font-weight: bold;
 }
@@ -78,7 +78,7 @@ li:hover{
 }
 
 
-.book-category-info-details span{
+.book-category-info-details span, .book-list span{
   font-style: italic;
   color: #999999;
 }
@@ -106,8 +106,68 @@ li:hover{
 .book-list ul{
   width: 100%;
   height: 100%;
+  background-color: #fff;
 }
 
+.book-info-in-list-details p{
+  margin-top: -2%;
+}
+
+.book-info-in-list-image{
+  width: 60%;
+  height: 100%;
+}
+
+
+.book{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  margin: 2%;
+}
+.book div{
+  padding: 1%;
+  margin: 0 2%;
+}
+
+.book-image-container{
+  height: 100%;
+  width: 25%;
+  
+}
+
+.book-details{
+  height: 30%;
+  width: 35%;
+}
+
+.book-seller-details{
+  height: 90%;
+  width: 20%;
+  border: 1px solid #cecece;
+}
+.buy-btn{
+  background-color: #35a935;
+  padding: 1% 0;
+  color: #fff;
+  cursor: pointer;
+  height: 30px;
+  width: 50px;
+  border: 1px solid white;
+  border-radius: 10%;
+  font-size: 15px;
+}
+.buy-btn:hover{
+  background-color: green;
+}
+
+.book-seller-details-links{
+  display: flex;
+}
+
+.book-seller-details-links ul{
+  width: 100%;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
