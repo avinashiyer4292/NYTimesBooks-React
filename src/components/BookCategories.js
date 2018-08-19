@@ -1,7 +1,7 @@
 import React,  {Component} from 'react';
 import { connect } from 'react-redux';
 import * as constants from '../constants/constants';
-import  * as actions from '../store/actions';
+import * as actions from '../store/actions';
 import BookCategoryInfo from './BookCategoryInfo';
 import BooksList from './BooksList';
 import fetchJsonp from 'fetch-jsonp';
@@ -32,16 +32,23 @@ class BooksCategories extends Component{
     }
 
     render(){
-        const { list , isLoading } = this.props;
-        console.log(`Books list: ${JSON.stringify(list)}, ${isLoading}`);
-        
+        const { list , isLoading , category} = this.props;
+        //console.log(`Books list: ${JSON.stringify(list)}, ${isLoading}`);
+        //console.log(`category index: ${categoryIndex}`)
         //let spinner = isLoading === true ? <p>Loading...</p>: null;
         
         if(list===null)
             return ( <p>Loading...</p> );
         
-            return(
-               
+
+        //let categoryIndex=0;
+        
+        // if(list!==null && category!==null)
+        //   categoryIndex= list['lists'].findIndex( (item, idx) => {
+        //                         category.list_id === item.list_id
+        //                     });
+
+            return(   
                 <div className='container'>
                     <div className='side-nav-bar'>
                         <span className='categories'>Categories</span>
@@ -57,9 +64,9 @@ class BooksCategories extends Component{
                         </ul>
                 </div>
                 <div className='main-bar'>
-                    <BookCategoryInfo info={this.props.category} />
+                    <BookCategoryInfo info={category} />
                     <span className='categories'>Books</span>
-                    <BooksList books ={this.props.category.books} />
+                    <BooksList books={category.books}/>
                 </div>
             </div>
             );
