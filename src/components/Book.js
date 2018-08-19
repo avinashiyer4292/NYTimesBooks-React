@@ -3,7 +3,7 @@ import React from 'react';
 const Book = (props) => {
 
     const { book }  = props.location.state;
-    console.log(`Book links is : ${JSON.stringify(book.buy_links)}`)
+    let description = book.description === "" ? 'No description provided' : book.description;
     return(
         <div className='book'>
             <div className="book-image-container">
@@ -15,7 +15,7 @@ const Book = (props) => {
                 <h2>{book.title}</h2>
                 <p>{book.contributor}</p>
                 <p><span>Publisher</span> : {book.publisher}</p>
-                <p><span style={{'fontStyle':'italic', 'fontWeight':'bold'}}>{book.description}</span></p>
+                <p><span style={{'fontStyle':'italic', 'fontWeight':'bold'}}>{description}</span></p>
             </div>
             <div className='book-seller-details'>
                 <h3 style={{'textAlign':'center'}}>Sellers</h3> 
