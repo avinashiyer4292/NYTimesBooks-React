@@ -16,6 +16,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "fetch-jsonp": "^1.1.3",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1"
   }
