@@ -11,43 +11,29 @@ import '../App.css';
 class BooksCategories extends Component{
 
     componentDidMount(){
-        //console.log(`Fetching books...`);
         this.props.fetchBooksBegin;
         fetchJsonp(`${constants.BOOKS_API_URL}`, {
             jsonpCallbackFunction: `${constants.CALLBACK_FUNCTION}`
           })
+          .then(handleErrors)
           .then(response =>  response.json())
           .then(json =>  {
-            //console.log('parsed json', json['results']);
             this.props.fetchBooksSuccess(json['results']);
             return json.results
           }).catch(err =>  {
             console.log('parsing failed', err);
-            this.props.fetchBooksFailure(err);
+            this.props.fetchBooksFailure(err.message);
           })
     }
 
-    showBookCategoryInfo(index){
-
-    }
-
     render(){
-        const { list , isLoading , category} = this.props;
-        //console.log(`Books list: ${JSON.stringify(list)}, ${isLoading}`);
-        //console.log(`category index: ${categoryIndex}`)
-        //let spinner = isLoading === true ? <p>Loading...</p>: null;
+        const { list , isLoading , category, isError } = this.props;
         
+        if(isError!==null)
+            return( <p style={{'textAlign':'center'}}>Error fetching books: {isError}</p>)
         if(list===null)
-            return ( <p>Loading...</p> );
+            return ( <p style={{'textAlign':'center'}}>Loading...</p> );
         
-
-        //let categoryIndex=0;
-        
-        // if(list!==null && category!==null)
-        //   categoryIndex= list['lists'].findIndex( (item, idx) => {
-        //                         category.list_id === item.list_id
-        //                     });
-
             return(   
                 <div className='container'>
                     <div className='side-nav-bar'>
@@ -103,15 +89,11 @@ const mapDispatchActionToProps = dispatch => {
     };
 }
 
-  
-
-  
-  
-//   function handleErrors(response) {
-//     if (!response.ok) {
-//       throw Error(response.statusText);
-//     }
-//     return response;
-//   }
+  function handleErrors(response) {
+    if (!response.ok) {
+      throw Error(response.statusText);
+    }
+    return response;
+  }
 
 export default connect(mapStateToProps, mapDispatchActionToProps)(BooksCategories);
