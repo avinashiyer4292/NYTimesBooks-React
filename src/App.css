@@ -2,6 +2,112 @@
   text-align: center;
 }
 
+.container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.side-nav-bar{
+  width: 20%;
+  height: 100%;
+  border-right: 1px solid #cecece;
+  box-shadow: 4px 3px 10px 1px #cecece;
+}
+.categories{
+  font-style: italic;
+  font-size: 14px;
+  padding: 10px;
+  color: #979797;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  height: 100%;
+}
+
+li{
+  display:flex;
+  list-style-type: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 15px;
+}
+
+li:hover{
+  background-color: rgb(77,86,103);
+  color: #fff;
+  font-weight: bold;
+}
+
+
+.main-bar{
+  flex: 1;
+  height: 100%;
+  background-color:rgb(245, 247, 249);
+}
+
+.book-category-info, .book-info-in-list{
+    background-color: '#fff';
+    margin: 2%;
+    border: 1px solid #cecece;
+    box-shadow: 0px 1px 1px 1px #cecece;
+    width: 90%;
+    height: 35%;
+    display: flex;
+}
+
+.book-category-info-image-container{
+  width: 20%;
+  height: 90%;
+  margin: auto 10px;
+}
+
+
+.book-category-info-image{
+  width: 100%;
+  height: 100%;
+}
+
+.book-category-info-details{
+  flex: 1;
+  background-color: #fff;
+  height: 100%;
+}
+
+
+.book-category-info-details span{
+  font-style: italic;
+  color: #999999;
+}
+
+.book-list{
+  background-color: '#fff';
+  margin: 2%;
+  border: 1px solid #cecece;
+  box-shadow: 0px 1px 1px 1px #cecece;
+  width: 90%;
+  height: 45%;
+  display: flex;
+}
+
+.book-info-in-list{
+  height: 15% !important;
+}
+
+.book-info-in-list-image-container{
+  width: 10%;
+  height: 100%;
+  margin: auto 2px;
+}
+
+.book-list ul{
+  width: 100%;
+  height: 100%;
+}
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
