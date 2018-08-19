@@ -12,7 +12,7 @@ Once installed, run the following commands:
 
 ### Installing
 ```
-git clone https://github.com/avinashiyer4292/nytimesbooks-react.git
+git clone https://github.com/avinashiyer4292/NYTimesBooks-React.git
 cd NYTimesBooks-React
 npm install
 npm start
