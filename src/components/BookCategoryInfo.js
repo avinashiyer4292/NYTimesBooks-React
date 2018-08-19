@@ -1,7 +1,6 @@
 import React from 'react';
 import '../App.css';
 const BookCategoryInfo = (props) => {
-    //console.log(`Book category info: ${JSON.stringify(props)}`)
     return(
         <div className='book-category-info'>
             <div className='book-category-info-image-container'>
