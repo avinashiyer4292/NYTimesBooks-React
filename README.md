@@ -1,6 +1,14 @@
 # NYTimesBooks-React
 A react-redux online challenge, using NYTimes Books API
 
+# Screenshots
+
+<img width="1429" alt="screen shot 2018-08-19 at 1 49 35 pm" src="https://user-images.githubusercontent.com/13279942/44313102-292da500-a3b7-11e8-99e3-f7e23b7a3d48.png">
+
+<img width="1431" alt="screen shot 2018-08-19 at 1 50 02 pm" src="https://user-images.githubusercontent.com/13279942/44313103-292da500-a3b7-11e8-8ddb-f39f0ec04e2e.png">
+
+<img width="1431" alt="screen shot 2018-08-19 at 1 50 17 pm" src="https://user-images.githubusercontent.com/13279942/44313104-292da500-a3b7-11e8-8c73-eafa9b083515.png">
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
