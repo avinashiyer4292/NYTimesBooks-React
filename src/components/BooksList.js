@@ -1,96 +1,28 @@
-import React,  {Component} from 'react';
-import { connect } from 'react-redux';
-import * as constants from '../constants/constants';
-import  * as actions from '../store/actions';
-import fetchJsonp from 'fetch-jsonp';
+import React from 'react';
 import '../App.css';
+const BooksList = (props) => {
 
-
-class BooksList extends Component{
-
-    componentDidMount(){
-        console.log(`Fetching books...`);
-        this.props.fetchBooksBegin;
-        fetchJsonp(`${constants.BOOKS_API_URL}`, {
-            jsonpCallbackFunction: `${constants.CALLBACK_FUNCTION}`
-          })
-          .then(response =>  response.json())
-          .then(json =>  {
-            console.log('parsed json', json['results']);
-            this.props.fetchBooksSuccess(json['results']);
-            return json.results
-          }).catch(err =>  {
-            console.log('parsing failed', err);
-            this.props.fetchBooksFailure(err);
-          })
-    }
-
-    displayItems = (list) => {
-       
-    }
-
-    render(){
-        const { list , isLoading } = this.props;
-        console.log(`Books list: ${JSON.stringify(list)}, ${isLoading}`);
-        
-        //let spinner = isLoading === true ? <p>Loading...</p>: null;
-        
-        if(list===null)
-            return ( <p>Loading...</p> );
-        
-            return(
-               
-                <div className='container'>
-                    <div className='side-nav-bar'>
-                        <ul>
-                            {
-                                list['lists'].map( (list, index) => {
-                                            return <li key={index}>{list.list_name}</li>
-                                            })
-                            }
-                        </ul>
-                </div>
-                <div className='main-bar'>
-                        
-                </div>
+    console.log(`Books: ${JSON.stringify(props.books)}`)
+    return(
+            <div className='book-list'>
+                <ul>
+                    {props.books.map( (book,index) => {
+                        return <li key={index} 
+                            className='book-info-in-list'>
+                                <div className='book-info-in-list-image-container'>
+                                    <img src={book.book_image} 
+                                        className='book-category-info-image'
+                                        alt={book.title} />
+                                </div>
+                                <div className='book-info-in-list-details'>
+                                <p><span>Title</span> : {book.title} <span> by {book.author}</span></p>
+                                <p><a href={book.amazon_product_url}>Buy from Amazon</a></p>
+                                </div>
+                            
+                        </li>
+                    })}
+                </ul>
             </div>
-            );
-    
-         
-    }
+    );
 }
-const mapStateToProps = state => {
-    return {
-        list: state.booksList,
-        isLoading: state.loading,
-        isError: state.error
-    };
-}
-const mapDispatchActionToProps = dispatch => {
-    return {
-        fetchBooksBegin: () => dispatch({type: actions.FETCH_BOOKS_BEGIN}),
-        fetchBooksSuccess : books => dispatch({
-            type: actions.FETCH_BOOKS_SUCCESS,
-            payload: { books }
-          }),
-          
-        fetchBooksFailure : error => dispatch({
-            type: actions.FETCH_BOOKS_FAILURE,
-            payload: { error }
-          }),
-
-    };
-}
-
-  
-
-  
-  
-//   function handleErrors(response) {
-//     if (!response.ok) {
-//       throw Error(response.statusText);
-//     }
-//     return response;
-//   }
-
-export default connect(mapStateToProps, mapDispatchActionToProps)(BooksList);
+export default BooksList;

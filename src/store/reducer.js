@@ -2,7 +2,8 @@ import * as actions from './actions';
 const initialState = {
     booksList: null,
     loading: false,
-    error: null
+    error: null,
+    category: null
 };
 
 const reducer = (state=initialState, action) => {
@@ -17,6 +18,7 @@ const reducer = (state=initialState, action) => {
             ...state,
             booksList: action.payload.books,
             loading: false,
+            category: action.payload.books.lists[0]
         };
 
         case actions.FETCH_BOOKS_FAILURE: return{
@@ -24,6 +26,11 @@ const reducer = (state=initialState, action) => {
             booksList: null,
             loading:false,
             error: action.payload.error
+        };
+
+        case actions.SET_CURRENT_BOOK_CATEGORY: return{
+            ...state,
+            category: state.booksList.lists[action.payload.categoryIndex]
         };
 
         default: return state;

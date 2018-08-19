@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BooksList from './components/BooksList';
+import BookCategories from './components/BookCategories';
 import Header from './components/Header';
 class App extends Component {
   
@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <BooksList  />
+        <BookCategories  />
       </div>
     );
   }
