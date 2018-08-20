@@ -21,7 +21,7 @@ class BooksCategories extends Component{
             this.props.fetchBooksSuccess(json['results']);
             return json.results
           }).catch(err =>  {
-            console.log('parsing failed', err);
+            console.log(`Caught error: ${err}`);
             this.props.fetchBooksFailure(err.message);
           })
     }
@@ -91,6 +91,7 @@ const mapDispatchActionToProps = dispatch => {
 
   function handleErrors(response) {
     if (!response.ok) {
+        console.log(`Error response: ${response}`);
       throw Error(response.statusText);
     }
     return response;
