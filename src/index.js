@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+<<<<<<< HEAD
 import reducer from './store/reducer';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -17,4 +18,8 @@ ReactDOM.render(
             </BrowserRouter>
         </Provider>  
     , document.getElementById('root'));
+=======
+
+ReactDOM.render(<App />, document.getElementById('root'));
+>>>>>>> create-react-app setup
 registerServiceWorker();
