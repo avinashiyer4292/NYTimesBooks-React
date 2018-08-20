@@ -22,7 +22,7 @@ class BooksCategories extends Component{
             return json.results
           }).catch(err =>  {
             console.log(`Caught error: ${err}`);
-            this.props.fetchBooksFailure(err.message);
+            this.props.fetchBooksFailure(err);
           })
     }
 
