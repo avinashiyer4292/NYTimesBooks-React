@@ -15,7 +15,7 @@ const Header =() => {
     }
     return(
         <div style={headerStyle}>
-            <span style={spanStyle}>Aera React/Redux Challenge - NYTimes Books App</span>
+            <span style={spanStyle}>React/Redux - NYT Books App</span>
         </div>
     )
 }
