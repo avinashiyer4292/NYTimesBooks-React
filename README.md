@@ -1,6 +1,10 @@
 # NYTimesBooks-React
 A react-redux online challenge, using NYTimes Books API
 
+The NYTimes Books API consists of a list of book categories (like Sports, Business, Fiction etc.) wherein each category has a set of books. 
+
+https://nyt-books-react.herokuapp.com
+
 # Screenshots
 
 <img width="1429" alt="screen shot 2018-08-19 at 1 49 35 pm" src="https://user-images.githubusercontent.com/13279942/44313102-292da500-a3b7-11e8-99e3-f7e23b7a3d48.png">
